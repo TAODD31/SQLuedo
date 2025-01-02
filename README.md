@@ -12,7 +12,6 @@
     SQLuedo est un jeu sur navigateur web et sur application mobile qui consiste a resoudre des enquetes via des blocs de requete SQL
     <br/>
     <br/>
-    <a href="https://codefirst.iut.uca.fr/git/SQLuedo/SQLuedo/wiki/Home"><strong>Lien vers la documentation.</strong></a>
   </p>
 
 ## Contributeur
