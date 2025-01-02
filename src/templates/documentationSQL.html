@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Documentation SQL</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+<header class="bg-blue-600 text-white py-4">
+    <div class="container mx-auto text-center">
+        <h1 class="text-3xl font-bold">Documentation SQL</h1>
+        <p class="text-lg mt-2">Guide simplifié des commandes SQL et présentation d'un MLD</p>
+    </div>
+</header>
+<nav class="bg-white shadow-md py-4">
+    <div class="container mx-auto text-center">
+        <a href="#mld" class="text-blue-600 hover:underline mx-4">MLD</a>
+        <a href="#select" class="text-blue-600 hover:underline mx-4">SELECT</a>
+        <a href="#from" class="text-blue-600 hover:underline mx-4">FROM</a>
+        <a href="#where" class="text-blue-600 hover:underline mx-4">WHERE</a>
+    </div>
+</nav>
+<main class="container mx-auto my-8 px-4">
+    <section id="mld" class="mb-12">
+        <h2 class="text-2xl font-semibold text-gray-800">Présentation du MLD</h2>
+        <p class="mt-2">
+            Le Modèle Logique de Données (MLD) présenté ci-dessous représente la structure d'une base de données pour gérer les réservations d'hôtel.
+            Voici une description des principales tables et de leurs relations :
+        </p>
+        <ul class="list-disc ml-6 mt-4">
+            <li>
+                <strong>CLIENT</strong> : Contient les informations sur les clients, comme leur nom, prénom, date de naissance, et coordonnées.
+            </li>
+            <li>
+                <strong>RESERVATION</strong> : Stocke les détails des réservations, tels que la date de début, le nombre de nuits, et le mode de paiement.
+            </li>
+            <li>
+                <strong>CHAMBRE</strong> : Représente les chambres disponibles dans l'hôtel avec des détails comme l'étage, la superficie, la capacité, et les équipements.
+            </li>
+            <li>
+                <strong>OCCUPATION</strong> : Indique quelle chambre est occupée pour une réservation donnée.
+            </li>
+            <li>
+                <strong>PERIODE</strong> : Définit les périodes spécifiques (exemple : haute saison).
+            </li>
+            <li>
+                <strong>PRIX</strong> : Associe un tarif à une chambre en fonction d'une période.
+            </li>
+        </ul>
+        <p class="mt-4">Voici le diagramme du MLD :</p>
+        <img src="/SQLuedo/src/images/documentationMLDexemple.png" alt="Modèle Logique de Données " class="mt-4 mx-auto rounded shadow-md">
+    </section>
+    <section id="select" class="mb-12">
+        <h2 class="text-2xl font-semibold text-gray-800">SELECT</h2>
+        <p class="mt-2">
+            La commande <code class="bg-gray-100 text-gray-700 px-1 rounded">SELECT</code> permet de récupérer des données depuis une table dans une base de données.
+            Elle est utilisée pour afficher des colonnes spécifiques ou toutes les colonnes d'une table.
+        </p>
+        <p>Exemple : Afficher les noms, prénoms et pays de tous les clients :</p>
+        <pre class="bg-gray-100 p-4 rounded mt-4 overflow-x-auto">
+<code>SELECT nom, prenom, pays
+FROM CLIENT;</code>
+            </pre>
+        <p>Exemple de résultat :</p>
+        <table class="table-auto border-collapse border border-gray-300 w-full text-left mt-4">
+            <thead class="bg-gray-100">
+            <tr>
+                <th class="border border-gray-300 px-4 py-2">nom</th>
+                <th class="border border-gray-300 px-4 py-2">prenom</th>
+                <th class="border border-gray-300 px-4 py-2">pays</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td class="border border-gray-300 px-4 py-2">Dupont</td>
+                <td class="border border-gray-300 px-4 py-2">Jean</td>
+                <td class="border border-gray-300 px-4 py-2">France</td>
+            </tr>
+            <tr>
+                <td class="border border-gray-300 px-4 py-2">Martin</td>
+                <td class="border border-gray-300 px-4 py-2">Marie</td>
+                <td class="border border-gray-300 px-4 py-2">Canada</td>
+            </tr>
+            <tr>
+                <td class="border border-gray-300 px-4 py-2">Rossi</td>
+                <td class="border border-gray-300 px-4 py-2">Luca</td>
+                <td class="border border-gray-300 px-4 py-2">Italie</td>
+            </tr>
+            <tr>
+                <td class="border border-gray-300 px-4 py-2">Smith</td>
+                <td class="border border-gray-300 px-4 py-2">John</td>
+                <td class="border border-gray-300 px-4 py-2">États-Unis</td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="from" class="mb-12">
+        <h2 class="text-2xl font-semibold text-gray-800">FROM</h2>
+        <p class="mt-2">
+            La clause <code class="bg-gray-100 text-gray-700 px-1 rounded">FROM</code> spécifie la table où chercher les données. Elle est obligatoire dans une requête SQL.
+        </p>
+        <p>Exemple : Afficher toutes les informations des réservations :</p>
+        <pre class="bg-gray-100 p-4 rounded mt-4 overflow-x-auto">
+<code>SELECT *
+FROM RESERVATION;</code>
+            </pre>
+        <p>Exemple de résultat :</p>
+        <table class="table-auto border-collapse border border-gray-300 w-full text-left mt-4">
+            <thead class="bg-gray-100">
+            <tr>
+                <th class="border border-gray-300 px-4 py-2">numero</th>
+                <th class="border border-gray-300 px-4 py-2">dateDebut</th>
+                <th class="border border-gray-300 px-4 py-2">nbNuits</th>
+                <th class="border border-gray-300 px-4 py-2">datePaiement</th>
+                <th class="border border-gray-300 px-4 py-2">modePaiement</th>
+                <th class="border border-gray-300 px-4 py-2">client</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td class="border border-gray-300 px-4 py-2">1001</td>
+                <td class="border border-gray-300 px-4 py-2">2024-11-01</td>
+                <td class="border border-gray-300 px-4 py-2">3</td>
+                <td class="border border-gray-300 px-4 py-2">2024-10-20</td>
+                <td class="border border-gray-300 px-4 py-2">Carte</td>
+                <td class="border border-gray-300 px-4 py-2">1</td>
+            </tr>
+            <tr>
+                <td class="border border-gray-300 px-4 py-2">1002</td>
+                <td class="border border-gray-300 px-4 py-2">2024-11-05</td>
+                <td class="border border-gray-300 px-4 py-2">5</td>
+                <td class="border border-gray-300 px-4 py-2">2024-10-22</td>
+                <td class="border border-gray-300 px-4 py-2">PayPal</td>
+                <td class="border border-gray-300 px-4 py-2">2</td>
+            </tr>
+            <tr>
+                <td class="border border-gray-300 px-4 py-2">1003</td>
+                <td class="border border-gray-300 px-4 py-2">2024-11-10</td>
+                <td class="border border-gray-300 px-4 py-2">2</td>
+                <td class="border border-gray-300 px-4 py-2">2024-10-25</td>
+                <td class="border border-gray-300 px-4 py-2">Virement</td>
+                <td class="border border-gray-300 px-4 py-2">3</td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="where" class="mb-12">
+        <h2 class="text-2xl font-semibold text-gray-800">WHERE</h2>
+        <p class="mt-2">
+            La clause <code class="bg-gray-100 text-gray-700 px-1 rounded">WHERE</code> permet de filtrer les résultats selon une ou plusieurs conditions.
+        </p>
+        <p>Exemple : Trouver les clients qui habitent en France :</p>
+        <pre class="bg-gray-100 p-4 rounded mt-4 overflow-x-auto">
+<code>SELECT nom, prenom
+FROM CLIENT
+WHERE pays = 'France';</code>
+            </pre>
+        <p>Exemple avec plusieurs conditions : Trouver les chambres avec une capacité de 2 personnes et une baignoire :</p>
+        <pre class="bg-gray-100 p-4 rounded mt-4 overflow-x-auto">
+<code>SELECT numero, etage
+FROM CHAMBRE
+WHERE capacite = 2 AND baignoire = 'oui';</code>
+            </pre>
+        <p>Exemple de résultat :</p>
+        <table class="table-auto border-collapse border border-gray-300 w-full text-left mt-4">
+            <thead class="bg-gray-100">
+            <tr>
+                <th class="border border-gray-300 px-4 py-2">nom</th>
+                <th class="border border-gray-300 px-4 py-2">prenom</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td class="border border-gray-300 px-4 py-2">Dupont</td>
+                <td class="border border-gray-300 px-4 py-2">Jean</td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+</main>
+<footer class="bg-gray-100 py-4 text-center text-sm text-gray-600">
+    <p>Documentation SQL - Guide simplifié | &copy; 2024</p>
+</footer>
+</body>
+</html>
+

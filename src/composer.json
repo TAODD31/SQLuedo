@@ -1,0 +1,15 @@
+{
+  "autoload": {
+    "psr-4": {
+      "controleur\\": "controleur/",
+      "config\\": "config/",
+      "modeles\\": "modeles/",
+      "gateway\\": "modeles/gateway/",
+      "connection\\": "connection/",
+      "vendor\\": "AltoRouteur/"
+    }
+  },
+  "require": {
+    "twig/twig": "^3.14"
+  }
+}
