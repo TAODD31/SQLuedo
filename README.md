@@ -26,7 +26,7 @@
 
 ### 1 - Création de bases de données 
 
-Premièrement, vous devez créer la base de données *sqluedo.sql* en mySQL. Le fichier est situé dans le dossier base de donné du projet. Ce sera la base de données de l'application.
+Premièrement, vous devez créer la base de données *sqluedo.sql* en mySQL. Le fichier est situé dans le dossier *bdd* du projet. Ce sera la base de données de l'application.
 
 <br>
 
