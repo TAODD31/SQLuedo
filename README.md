@@ -21,3 +21,9 @@
 * [Titouan Ducroix](https://codefirst.iut.uca.fr/git/titouan.ducroix)  
 * [Julien Araujo Da Silva](https://codefirst.iut.uca.fr/git/julien.araujo_da_silva )  
 * [Chahid Lafdel](https://codefirst.iut.uca.fr/git/chahid.lafdel)  
+
+## Utilisation de l'application
+
+### 1 
+
+Créer la base de données sqluedo.sql en mySQL. Le fichier est situé dans le dossier base de donné du projet
