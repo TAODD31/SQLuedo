@@ -24,6 +24,11 @@
 
 ## Utilisation de l'application
 
-### 1 
+### 1 - Création de bases de données 
 
-Créer la base de données sqluedo.sql en mySQL. Le fichier est situé dans le dossier base de donné du projet
+Premièrement, vous devez créer la base de données sqluedo.sql en mySQL. Le fichier est situé dans le dossier base de donné du projet.
+Ensuite, il vous faut créer la base de donné gestionevenements.sql en mySQL. Le fichier se trouve au même endroit.
+
+### 2 - mise en place de l'application
+
+Dans le dossier *src*
