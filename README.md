@@ -41,4 +41,8 @@ Vous devrez modifier les lignes suivante avec vos informations :
 - Ligne 8 : Mettez le nom du super utilisateur de votre application de base de données (Exemple : UserBdd)
 - Ligne 9 : Mettez le mot de passe de votre super utilisateur (Exemple : MdpUserBdd)
 - Ligne 13 : remplacez le nom de la base de données de l'application situé dans la variable *dbName* par celle que vous avez créer. Normalement, ce sera celui déjà marqué, soit *sqluedo*.
-- Ligne 14 : remplacez le host la partie *"mysql:host=localhost;dbname={$dbName}"* par le host que vous souhaitez. 
+- Ligne 14 : remplacez le host la partie *"mysql:host=localhost;dbname={$dbName}"* par le host que vous souhaitez.
+
+### 3 - Hébergeur
+
+Pour faire tourner l'application, il vous faudra un moyen d'héberger un site web et une base de donnée comme apache et MariaDB ou WampServer
